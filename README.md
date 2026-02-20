@@ -1,4 +1,4 @@
-# evidence_logger.py
+# Evidence Logger
 
 A Python tool that generates timestamped audit evidence files from a AWS policy compliance check.
 
