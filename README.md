@@ -85,6 +85,10 @@ This script supports FedRAMP 20x compliance-as-code by producing structured, mac
 
 CJIS v6.0 (audit standard from April 1, 2026) introduces a hard delta on **AU-6**: agencies handling CJI must retain audit records for **1 year** and conduct **weekly review** of those records. This script's evidence files are the unit of that retention and the input to that review. A future enhancement will add S3 archival with Object Lock (WORM compliance mode) so the 1-year retention is enforced at the storage layer, not just by file naming.
 
+## Roadmap
+
+This tool is the foundation (the "spine") of the upcoming **Unified Evidence Collector** (Project 4, Month 7), which will consolidate `s3-audit`, `sg-audit`, and `cloudtrail-audit` findings into a single pipeline that flows through this evidence-generation layer. The OSCAL Assessment Results emission noted under *Future Improvements*, S3 Object Lock archival for the CJIS AU-6 1-year retention delta, and direct integration with [`oscal-evidence-pipeline`](https://github.com/0xBahalaNa/oscal-evidence-pipeline) all ship as part of that consolidation.
+
 ## Future Improvements
 
 - Accept policy filename as a command-line argument
