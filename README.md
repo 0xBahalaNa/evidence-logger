@@ -90,7 +90,7 @@ This script supports FedRAMP 20x compliance-as-code by producing structured, mac
 
 ## CJIS v6.0 Relevance
 
-CJIS v6.0 (audit standard from April 1, 2026) introduces a hard delta on **AU-6**: agencies handling CJI must retain audit records for **1 year** and conduct **weekly review** of those records. This script's evidence files are the unit of that retention and the input to that review. A future enhancement will add S3 archival with Object Lock (WORM compliance mode) so the 1-year retention is enforced at the storage layer, not just by file naming.
+CJIS v6.0 (published Dec 27, 2024; default audit baseline from April 1, 2026; Priority 2-4 fully enforceable Oct 1, 2027) introduces a hard delta on **AU-6**: agencies handling CJI must retain audit records for **1 year** and conduct **weekly review** of those records. This script's evidence files are the unit of that retention and the input to that review. A future enhancement will add S3 archival with Object Lock (WORM compliance mode) so the 1-year retention is enforced at the storage layer, not just by file naming.
 
 ## Roadmap
 
