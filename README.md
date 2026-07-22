@@ -39,6 +39,25 @@ This script automates evidence generation so you have audit-ready documentation.
 - **Overly permissive policy detection** — flags wildcard `Action: "*"` (AC-6) and wildcard `Resource: "*"` (AC-3)
 - **Human-readable output** — assessors can read the evidence file directly during walkthroughs
 
+## Architecture Overview
+
+```mermaid
+flowchart TD
+    CLI["evidence_logger.py<br/>CLI entry"] --> LOAD["Load IAM policy JSON<br/>test_policy.json"]
+    LOAD --> CHK["Statement checks"]
+    CHK --> ACT["Wildcard Action '*'<br/>AC-6"]
+    CHK --> RES["Wildcard Resource '*'<br/>AC-3"]
+    ACT --> WR["Write evidence file<br/>evidence/evidence_ts_policy_check.txt"]
+    RES --> WR
+    WR --> AU9["AU-9 protected artifact<br/>timestamped · non-overwrite"]
+    AU9 --> HUM["Assessor walkthroughs"]
+    AU9 --> PIPE["CJIS weekly AU-6 review<br/>Future OSCAL ingest"]
+```
+
+Editable Mermaid source (kept in sync with the fence above): [`docs/architecture.mmd`](docs/architecture.mmd).
+
+`evidence_logger.py` loads an IAM policy JSON (repo ships `test_policy.json`), flags wildcard `Action` / `Resource` statements, and writes a timestamped evidence file under `evidence/` so prior runs are never overwritten (AU-9). Assessors can read the artifact directly; the same files feed CJIS weekly AU-6 review, with OSCAL ingest planned for a future release (issue #6).
+
 ## Requirements
 
 - Python 3.6 or higher
