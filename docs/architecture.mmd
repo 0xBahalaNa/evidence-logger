@@ -1,0 +1,13 @@
+%% Editable Mermaid source for the README "Architecture Overview" section.
+%% Keep this file in sync with the inline ```mermaid fence in README.md.
+%% Diff-able source of truth for the architecture graph (no separate PNG export).
+flowchart TD
+    CLI["evidence_logger.py<br/>CLI entry"] --> LOAD["Load IAM policy JSON<br/>test_policy.json"]
+    LOAD --> CHK["Statement checks"]
+    CHK --> ACT["Wildcard Action '*'<br/>AC-6"]
+    CHK --> RES["Wildcard Resource '*'<br/>AC-3"]
+    ACT --> WR["Write evidence file<br/>evidence/evidence_ts_policy_check.txt"]
+    RES --> WR
+    WR --> AU9["AU-9 protected artifact<br/>timestamped · non-overwrite"]
+    AU9 --> HUM["Assessor walkthroughs"]
+    AU9 --> PIPE["CJIS weekly AU-6 review<br/>Future OSCAL ingest"]
