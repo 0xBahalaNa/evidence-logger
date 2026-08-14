@@ -3,7 +3,7 @@
 ![Input](https://img.shields.io/badge/Input-IAM%20policy%20JSON-FF9900?style=flat)
 ![NIST 800-53](https://img.shields.io/badge/NIST-800--53%20Rev%205-004990?style=flat)
 ![FedRAMP](https://img.shields.io/badge/FedRAMP-High%20Baseline-0071bc?style=flat)
-![CJIS](https://img.shields.io/badge/CJIS-Security%20Policy%20v6.0-cc0000?style=flat)
+![CJIS](https://img.shields.io/badge/CJIS-Security%20Policy%20v6.1-cc0000?style=flat)
 
 # Evidence Logger
 
@@ -18,7 +18,7 @@ No boto3. No network call. The filename pattern is
 
 ## Compliance Controls Addressed
 
-| NIST 800-53 Rev 5 | FedRAMP High | CJIS v6.0 | Validation Method |
+| NIST 800-53 Rev 5 | FedRAMP High | CJIS v6.1 | Validation Method |
 |--------------------|:------------:|:---------:|-------------------|
 | AU-2 Event Logging | Yes | - | Every check generates a structured audit record |
 | AU-3 Content of Audit Records | Yes | - | Records include timestamp, target file, finding, severity |
@@ -125,9 +125,9 @@ Assessment Results output so continuous-monitoring tooling can read the same run
 without a human transcription step. Until then, the value is a repeatable file
 per run with a stable naming scheme.
 
-## CJIS v6.0 Relevance
+## CJIS v6.1 Relevance
 
-CJIS v6.0 (Dec 27, 2024; default audit baseline April 1, 2026; Priority 2-4 fully
+CJIS v6.1 (Dec 27, 2024; default audit baseline April 1, 2026; Priority 2-4 fully
 enforceable Oct 1, 2027) wants AU-6 weekly review and 1-year retention for
 CJI-related audit records. These files are a review input. Timestamped names do
 not equal WORM retention; a later step is S3 archival with Object Lock so the
