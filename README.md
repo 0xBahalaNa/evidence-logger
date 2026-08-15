@@ -127,8 +127,8 @@ per run with a stable naming scheme.
 
 ## CJIS v6.1 Relevance
 
-CJIS v6.1 (Dec 27, 2024; default audit baseline April 1, 2026; Priority 2-4 fully
-enforceable Oct 1, 2027) wants AU-6 weekly review and 1-year retention for
+CJIS v6.1 (released June 25, 2026; v6.x the default audit baseline since April 1,
+2026; Priority 2-4 fully enforceable Oct 1, 2027) wants AU-6 weekly review and 1-year retention for
 CJI-related audit records. These files are a review input. Timestamped names do
 not equal WORM retention; a later step is S3 archival with Object Lock so the
 year is enforced at storage, not by hoping nobody deletes the folder.
