@@ -153,6 +153,8 @@ are the three pieces that close that loop.
 
 Control family mappings and AWS implementation details are documented in [nist-800-53-rev-5-to-aws-mapping](https://github.com/0xBahalaNa/nist-800-53-rev-5-to-aws-mapping).
 
+CI runs `python -m py_compile` on every tracked Python file. It is a syntax floor until this repo has tests.
+
 ## License
 
 MIT License
